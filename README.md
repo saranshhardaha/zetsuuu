@@ -1,53 +1,38 @@
-# Express API Starter
+# ZetsuuuAPI for Youtube and Twitch
 
-How to use this template:
+This API lets you fetch your rank dynamically, typically for making **!rank** command in your Twitch/YouTube stream.
 
-```sh
-npx create-express-api --directory my-api-name
-```
+# StreamElements/NightBot Usage
 
-Includes API Server utilities:
+1. Copy the following code and paste it in the output of whatever custom command you want to create.<br>
+`$(urlfetch https://zetsuuu.vercel.app/val/rank/region/name/tag)`
 
-* [morgan](https://www.npmjs.com/package/morgan)
-  * HTTP request logger middleware for node.js
-* [helmet](https://www.npmjs.com/package/helmet)
-  * Helmet helps you secure your Express apps by setting various HTTP headers. It's not a silver bullet, but it can help!
-* [dotenv](https://www.npmjs.com/package/dotenv)
-  * Dotenv is a zero-dependency module that loads environment variables from a `.env` file into `process.env`
-* [cors](https://www.npmjs.com/package/cors)
-  * CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+2. Replace `region` with your account's region code, `name` with your Valorant username and `tag` with your hashtag.
 
-Development utilities:
+## Valorant Region Codes
 
-* [nodemon](https://www.npmjs.com/package/nodemon)
-  * nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
-* [eslint](https://www.npmjs.com/package/eslint)
-  * ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
-* [jest](https://www.npmjs.com/package/jest)
-  * Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
-* [supertest](https://www.npmjs.com/package/supertest)
-  * HTTP assertions made easy via superagent.
+| Region Code | Corresponding Region |
+| ----------- | -------------------- |
+| ap          | Asia/Pacific         |
+| br          | Brazil               |
+| eu          | Europe               |
+| kr          | Korea                |
+| latam       | Latin America        |
+| na          | North America        |
 
-## Setup
+# Examples
 
-```
-npm install
-```
+Here is an example for my account. This would work for most accounts.
 
-## Lint
++ Example #1
+  + Username: `ZetsuuuYT#444`
+  + Account Region: `Asia/Pacific`
+  + URL: `$(urlfetch https://zetsuuu.vercel.app/val/rank/ap/ZetsuuuYT/444)`
 
-```
-npm run lint
-```
+Here is an example for an account with space(s) in middle. You don't need to put space in the URL so you can ignore spaces in your name.
 
-## Test
-
-```
-npm test
-```
-
-## Development
-
-```
-npm run dev
-```
++ Example #2
+  + Username: `SEN TenZ#0505`
+  + Account Region: `North America`
+  + URL: `$(urlfetch https://zetsuuu.vercel.app/val/rank/na/SENTenZ/0505)`
+  
